@@ -1,0 +1,42 @@
+; refer to the file named.rev.127.local for explanation of this header
+$TTL 3600
+
+@               IN      SOA  pepperell.net. andy.pepperell.net. (
+                                   1114552569  ; Serial
+                                       3600    ; Refresh
+                                       300     ; Retry
+                                       604800  ; Expire
+                                       3600 )  ; Minimum
+@               IN      NS      laliari.logiclrd.cx.
+@               IN      NS      jennifer.logiclrd.cx.
+; TXT records allow a more verbose info that can be seen using 'dig' or NSLOOKUP
+@               IN      TXT     "pepperell.net"
+;               IN      A       64.14.68.61
+@               IN      A       68.189.240.128
+@               IN      MX      1 goodaim.net.
+
+; you MUST define localhost
+localhost       IN      A       127.0.0.1
+
+; these lines define our machine
+; notice the lack of periods after machine names
+; this way 'openspace.cx' is appended to them
+;www            IN      A       64.14.68.61
+www             IN      A       68.189.240.128
+intarweb        IN      A       64.14.68.61
+
+;mail           IN      A       68.189.240.128
+spamsucks       IN      A       68.189.240.128
+
+; if you want 'aliases' for machines use this:
+; anyone locally trying 'ftp' or 'ftp.local.sunyit.edu' will be given
+; the IP number for 'server'
+; again notice the lack of periods so i don't have to type any extra.
+ftp             IN      CNAME   www
+dr              IN      CNAME   www
+
+;smtp           IN      CNAME   mail
+;pop            IN      CNAME   mail
+;pop3           IN      CNAME   mail
+pop             IN      CNAME   spamsucks
+pop3            IN      CNAME   spamsucks
